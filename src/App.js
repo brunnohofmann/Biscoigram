@@ -1,20 +1,25 @@
 import React from 'react'
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import {createAppContainer} from 'react-navigation';
-import Feed from './screens/Feed';
+import Home from './screens/Home';
 import Explore from './screens/Explore';
 import Create from './screens/Create';
 import Notifications from './screens/Notifications';
 import Profile from './screens/Profile';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faCamera, faCookie, faHome, faSearch, faUser} from '@fortawesome/free-solid-svg-icons';
-
-const navigatorIconColor = 'white';
+import {
+  faCamera,
+  faCookie,
+  faHome,
+  faSearch,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
+import {navigatorIconColor} from './constants/colors';
 
 const Navigator = createMaterialBottomTabNavigator(
   {
-    Feed: {
-      screen: Feed,
+    Home: {
+      screen: Home,
       navigationOptions: {
           tabBarIcon: <FontAwesomeIcon icon={faHome} color={ navigatorIconColor }/>,
       },
@@ -45,7 +50,7 @@ const Navigator = createMaterialBottomTabNavigator(
     },
   },
   {
-    initialRouteName: 'Feed',
+    initialRouteName: 'Home',
     activeColor: '#f0edf6',
     inactiveColor: '#3e2465',
     barStyle: {backgroundColor: '#694fad'},
