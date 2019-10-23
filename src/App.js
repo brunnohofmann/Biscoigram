@@ -6,54 +6,61 @@ import Explore from './screens/Explore';
 import Create from './screens/Create';
 import Notifications from './screens/Notifications';
 import Profile from './screens/Profile';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faCamera,
-  faCookie,
-  faHome,
-  faSearch,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
-import {navigatorIconColor} from './constants/colors';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+
+Icon.loadFont();
+MIcon.loadFont();
+
+const size = 24;
 const Navigator = createMaterialBottomTabNavigator(
   {
     Home: {
       screen: Home,
       navigationOptions: {
-          tabBarIcon: <FontAwesomeIcon icon={faHome} color={ navigatorIconColor }/>,
+          tabBarIcon: ({tintColor}) => <MIcon name="home-variant" size={size}  color={tintColor} />,
+          labeled: false,
       },
     },
     Explore: {
       screen: Explore,
         navigationOptions: {
-            tabBarIcon: <FontAwesomeIcon icon={faSearch} color={navigatorIconColor}/>,
+            tabBarIcon: ({tintColor}) => <Icon name="search" size={size} color={tintColor} />,
+            labeled: false
         },
     },
     Create: {
       screen: Create,
         navigationOptions: {
-            tabBarIcon: <FontAwesomeIcon icon={faCamera} size={25} color={navigatorIconColor}/>,
+            tabBarIcon: ({tintColor}) => <MIcon name="account-multiple-plus" size={size} color={tintColor} />,
+            labeled: false
         },
     },
       Notifications: {
           screen: Notifications,
           navigationOptions: {
-              tabBarIcon: <FontAwesomeIcon icon={faCookie} color={navigatorIconColor}/>,
+              tabBarIcon: ({tintColor}) => <MIcon name="cookie" size={size} color={tintColor} />,
+              labeled: false
           },
       },
     Profile: {
       screen: Profile,
         navigationOptions: {
-            tabBarIcon: <FontAwesomeIcon icon={faUser} color={navigatorIconColor}/>,
+            tabBarIcon: ({tintColor}) => <Icon name="user" size={size} color={tintColor} />,
+            labeled: false
         },
     },
   },
   {
-    initialRouteName: 'Home',
-    activeColor: '#f0edf6',
-    inactiveColor: '#3e2465',
-    barStyle: {backgroundColor: '#694fad'},
+      shifting: true,
+      initialRouteName: 'Home',
+      activeColor: '#000',
+      inactiveColor: '#999',
+      tabBarOptions: {
+          activeTintColor: '#e91e63',
+      },
+        barStyle: {backgroundColor: '#fff'},
   },
 );
 
