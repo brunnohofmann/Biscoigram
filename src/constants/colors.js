@@ -1,1 +1,2 @@
-export const navigatorIconColor = 'white';
+// export const navigatorIconColor = '#000';
+//
