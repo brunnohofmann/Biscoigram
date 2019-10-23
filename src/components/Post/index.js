@@ -1,10 +1,15 @@
 import React from 'react';
-import { View } from 'react-native'
-import Header from './Header';
+import { Image, View } from 'react-native';
 
-export default ({ data }) => (
+import PostActions from './PostActions';
+import PostComments from './PostSubtitle';
+import PostHeader from './PostHeader';
+
+export default ({ post }) => (
     <View>
-        <Header/>
-
+        <PostHeader post={post} />
+        <Image source={{uri: post.uri}} style={{height:350, marginTop: 8}}  />
+        <PostActions />
+        <PostComments comments={post.comments} />
     </View>
-)
+);

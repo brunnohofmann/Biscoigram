@@ -9,7 +9,7 @@ const Comment = (comment) => (
 )
 
 export default ({comments}) => (
-    <Box>
+    <Box style={{marginTop: 8}}>
         {comments && comments.map(Comment)}
     </Box>
 )
