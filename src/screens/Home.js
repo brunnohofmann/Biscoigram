@@ -12,7 +12,7 @@ export default () => (
         <Header />
         <ScrollView style={{marginBottom: 30}}>
         <Box style={styles.stories}>
-            <ScrollView horizontal>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {
                     fakeData.stories.map(story => (
                         <StoryThumb key={story.profile.imageUrl} imageUrl={story.profile.imageUrl} profileName={story.profile.profileName} />
