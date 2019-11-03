@@ -1,16 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-    faCamera, faInbox,
-} from '@fortawesome/free-solid-svg-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Box from './Box';
+Icon.loadFont();
 
 export default () => (
-    <View style={styles.container}>
-        <FontAwesomeIcon icon={faCamera} size={20}/>
+    <Box style={styles.container}>
+        <Icon name="camera" size={20} />
         <Text style={styles.title}>BiscoiGram</Text>
-        <FontAwesomeIcon icon={faInbox} size={20}/>
-    </View>
+        <Icon name="inbox" size={20} />
+    </Box>
 );
 
 const styles = StyleSheet.create({
@@ -21,7 +20,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 20,
         paddingBottom: 10,
     },
     title: {

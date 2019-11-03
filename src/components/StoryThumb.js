@@ -3,10 +3,10 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 
 import Avatar from './Avatar';
 
-export default ({imageUrl, profileName}) => (
+export default ({imageUrl, profile}) => (
     <View style={styles.view}>
         <Avatar uri={imageUrl} />
-        <Text style={styles.text}>{profileName}</Text>
+        <Text style={styles.text}>{profile.profileName}</Text>
     </View>
 );
 

@@ -33,7 +33,7 @@ const Navigator = createMaterialBottomTabNavigator(
     Create: {
       screen: Create,
         navigationOptions: {
-            tabBarIcon: ({tintColor}) => <MIcon name="account-multiple-plus" size={size} color={tintColor} />,
+            tabBarIcon: ({tintColor}) => <MIcon name="plus" size={size} color={tintColor} />,
             labeled: false
         },
     },
