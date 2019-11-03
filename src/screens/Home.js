@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 
 import Header from '../components/Header';
 import Post from '../components/Post';
@@ -9,20 +9,11 @@ import Box from '../components/Box';
 
 export default () => (
     <SafeAreaView>
-        <Header />
-        <ScrollView style={{marginBottom: 30}}>
-        <Box style={styles.stories}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {
-                    fakeData.stories.map(story => (
-                        <StoryThumb key={story.profile.imageUrl} imageUrl={story.profile.imageUrl} profileName={story.profile.profileName} />
-                    ))
-                }
-            </ScrollView>
-        </Box>
+        <Header/>
+        <ScrollView style={styles.stories} horizontal showsHorizontalScrollIndicator={false}>
             {
-                fakeData.posts.map(post => (
-                    <Post key={post.profile.imageUrl} post={post} />
+                fakeData.stories.map(story => (
+                    <StoryThumb key={story.profile.imageUrl} imageUrl={story.profile.imageUrl} profile={story.profile}/>
                 ))
             }
         </ScrollView>
@@ -34,10 +25,6 @@ const styles = StyleSheet.create({
         borderBottomColor: '#ccc',
         borderBottomWidth: 0.5,
         backgroundColor: '#ececec',
-    },
-    posts: {
-        borderBottomColor: '#ccc',
-        borderBottomWidth: 0.5,
-        backgroundColor: '#ececec',
+        paddingHorizontal: 8
     },
 });
